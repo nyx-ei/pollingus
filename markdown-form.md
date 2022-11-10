@@ -1,13 +1,18 @@
-##### Titre du sondage
+
+
+Titre du sondage
+========================
+
+
 
 ###### 1.Que faite vous aujourd'hui ?
-- [ ] Lecture
-- [ ] Sport
+> - [ ] Lecture
+> - [ ] Sport
 
 ###### 2.Etes vous bilingue ?
 
 <label for="oui">
-  <input type="radio"/> oui
+   <input type="radio"/> oui
 </label><br/>
 <label for="non">
   <input type="radio"/> non
@@ -26,13 +31,14 @@
 </label><br/>
 
 ###### 4.Trouvez la syntaxe correcte ?
-- [ ] ```<script src="jsf.js"  type="text/javascript"> ```
-- [ ] ```<script src="text/javascript" language="javascript" type="jsf.js"> ```
+>- [ ] ```<script src="jsf.js"  type="text/javascript"> ```
+>- [ ] ```<script src="text/javascript" language="javascript" type="jsf.js"> ```
  
 ###### 5. Donner votre avis:
 <input type="text" />
+_______________
 
-###### 6. Comment trouver vous la qualité de nos services?
+###### 6. Comment trouvez vous la qualité de nos services?
 <label>
 <input type="radio">Satisfait 
 </label><br/>
