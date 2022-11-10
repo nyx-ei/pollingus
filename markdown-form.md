@@ -6,8 +6,8 @@ Titre du sondage
 
 
 ###### 1.Que faite vous aujourd'hui ?
-> - [ ] Lecture
-> - [ ] Sport
+- [ ] Lecture
+ - [ ] Sport
 
 ###### 2.Etes vous bilingue ?
 
@@ -31,8 +31,8 @@ Titre du sondage
 </label><br/>
 
 ###### 4.Trouvez la syntaxe correcte ?
->- [ ] ```<script src="jsf.js"  type="text/javascript"> ```
->- [ ] ```<script src="text/javascript" language="javascript" type="jsf.js"> ```
+ - [ ] ```<script src="jsf.js"  type="text/javascript"> ```
+- [ ] ```<script src="text/javascript" language="javascript" type="jsf.js"> ```
  
 ###### 5. Donner votre avis:
 <input type="text" />
