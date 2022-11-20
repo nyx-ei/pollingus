@@ -1,5 +1,3 @@
-
-
 # Configurez un compte Meta basé sur les informations d'identification NYX-EI et capable d'utiliser le webhook
 
 ## step 1
