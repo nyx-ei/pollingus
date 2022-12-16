@@ -1,3 +1,1 @@
-#### intitulé question
-- yes
-- no
++ intitulé question
