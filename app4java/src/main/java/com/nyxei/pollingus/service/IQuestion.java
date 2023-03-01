@@ -1,6 +1,8 @@
 package com.nyxei.pollingus.service;
 
 import com.nyxei.pollingus.controller.Survey;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -12,6 +14,17 @@ public class IQuestion implements Serializable {
     public ArrayList<String> response;
 
     public ArrayList<String> responseList;
+
+    public static Logger logger = LoggerFactory.getLogger(Survey.class);
+
+    //  affiche le numéro de la question et l'invite
+    @Override
+    public String toString() {
+        return "IQuestion{" +
+                "Q" + questionNumber +
+                ": " + questionPrompt + '\'' +
+                '}';
+    }
 
     // La question est créée avec une liste de réponses vide, qui sera remplie lorsque l'utilisateur répondra à l'enquête
     public IQuestion(String prompt, int qNumber)
@@ -31,27 +44,25 @@ public class IQuestion implements Serializable {
 
 
     // renvoie uniquement l'invite de question
-    public String getPrompt(com.nyxei.pollingus.service.IQuestion q)
+    public String getPrompt(IQuestion q)
     {
         return q.questionPrompt;
     }
 
-    // affiche le numéro de la question et l'invite
-    public void displayQuestion()
-    {
-        System.out.println("Q" + questionNumber + ": " + questionPrompt);
-    }
+
 
     //affiche la ou les réponses à la question associée
     public void displayResponse()
     {
-        System.out.println("Response: " + response);
-        System.out.print("\n");
+        logger.debug("Response: " + response);
     }
+
 
     // obtient la réponse de l'utilisateur
     public void getUserResponse(IQuestion q)
     {
-        System.out.print("Enter your response: ");
+        logger.debug("Enter your response: ");
+        Response r = new Response(response.toString());
+        r.addResponseToQuestion(q);
     }
 }
