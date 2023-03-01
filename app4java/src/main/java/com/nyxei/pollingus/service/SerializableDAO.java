@@ -1,6 +1,8 @@
 package com.nyxei.pollingus.service;
 
 import com.nyxei.pollingus.controller.Survey;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -9,6 +11,7 @@ public class SerializableDAO {
     private static final String projectPath = "./";
     private static final String surveyExtension = ".ser";
 
+    public static Logger logger = LoggerFactory.getLogger(Survey.class);
     // affiche tous les fichiers qui ont été sérialisés, inclura les sondages et les réponses
     public ArrayList<String> getAllFiles()
     {
@@ -40,12 +43,11 @@ public class SerializableDAO {
 
             input.close();
             output.close();
-
-            System.out.println("Object has been deserialized");
+            logger.debug("Object has been deserialized");
         }
         catch(IOException | ClassNotFoundException e)
         {
-            System.out.println("Could not deserialize file");
+            logger.debug("Could not deserialize file");
             System.out.println(e);
         }
         return s;
@@ -63,13 +65,13 @@ public class SerializableDAO {
             o.close();
             f.close();
 
-            System.out.println("File has been successfully serialized");
+            logger.debug("File has been successfully serialized");
         }
         catch(IOException e)
         {
-            System.out.println("Path: " + filePath);
-            System.out.println("Error: " + e);
-            System.out.println("Could not serialize file");
+            logger.debug("Path: " + filePath);
+            logger.debug("Error: " + e);
+            logger.debug("Could not serialize file");
         }
     }
 }
