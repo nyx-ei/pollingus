@@ -2,6 +2,8 @@ package com.nyxei.pollingus.controller;
 
 import com.nyxei.pollingus.service.IQuestion;
 import com.nyxei.pollingus.service.SerializableDAO;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -16,6 +18,8 @@ public class Survey implements Serializable {
     // create a dao for serialization
     private static final SerializableDAO dao = new SerializableDAO();
 
+    public static Logger logger = LoggerFactory.getLogger(Survey.class);
+
     // L'enquête est instanciée avec un nom et une liste d'objets Question
     public Survey(ArrayList<IQuestion> listOfQuestions, String name)
     {
@@ -28,7 +32,7 @@ public class Survey implements Serializable {
     {
         for (IQuestion x: this.questions)
         {
-            x.displayQuestion();
+            x.toString();
             if(x.response.size() > 0) {
                 x.displayResponse();
             }
@@ -42,13 +46,13 @@ public class Survey implements Serializable {
     }
 
     // obtient une question en utilisant son numéro, utilise la fonction d'édition de Question
-    public void editSurvey(int qNumber)
+    public void destroy(int qNumber)
     {
         for (IQuestion x: questions)
         {
             if(x.questionNumber == qNumber)
             {
-                x.displayQuestion();
+                x.toString();
             }
         }
     }
@@ -58,9 +62,10 @@ public class Survey implements Serializable {
     public static void serialize(Survey s)
     {
         Survey duplicate = s;
-        dao.saveFile(duplicate, s.surveyName);
+            dao.saveFile(duplicate, s.surveyName);
         s.display();
-        System.out.println("Saved");
+        logger.debug("Saved");
+
     }
 
     // utilise l'objet dao pour charger l'enquête à partir du chemin parcouru, renvoie l'enquête chargée
