@@ -1,5 +1,6 @@
 package com.nyxei.pollingus.domain.messages;
 
+
 /**
  * Mandatory for message templates.
  * <p>
