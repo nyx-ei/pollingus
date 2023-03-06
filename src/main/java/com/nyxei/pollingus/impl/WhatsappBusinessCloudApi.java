@@ -1,5 +1,8 @@
 package com.nyxei.pollingus.impl;
 
+
+
+
 import static com.nyxei.pollingus.WhatsappApiServiceGenerator.createService;
 
 
@@ -28,5 +31,9 @@ public class WhatsappBusinessCloudApi {
      * @return {@link MessageResponse}
      * @see <a href="https://developers.facebook.com/docs/whatsapp/cloud-api/reference/messages">official documentation</a>
      */
-   
+    public void sendMessage(String phoneNumberId, Message message) {
+
+        return executeSync(whatsappBusinessCloudApiService.sendMessage(phoneNumberId, message));
+    }
+
 }

@@ -2,7 +2,7 @@ package com.nyxei.pollingus;
 
 import com.nyxei.pollingus.configuration.WhatsappApiConfig;
 
-import com.nyxei.pollingus.exception.WhatsappApiException;
+//import com.nyxei.pollingus.exception.WhatsappApiException;
 import com.nyxei.pollingus.interceptor.AuthenticationInterceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.ResponseBody;
