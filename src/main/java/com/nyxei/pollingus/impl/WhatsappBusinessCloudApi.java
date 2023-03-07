@@ -1,13 +1,21 @@
 package com.nyxei.pollingus.impl;
 
-
+import retrofit2.Call;
+import retrofit2.http.Body;
+import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 
 import static com.nyxei.pollingus.WhatsappApiServiceGenerator.createService;
 
 
+
 import com.nyxei.pollingus.domain.messages.Message;
+import com.nyxei.pollingus.domain.messages.MessageResponse;
 import com.nyxei.pollingus.service.WhatsappBusinessCloudApiService;
+
+
+import static com.nyxei.pollingus.WhatsappApiServiceGenerator.executeSync;
 
 /**
  * Implementation of WhatsApp Business Platform Cloud API with synchronous/blocking
@@ -17,8 +25,10 @@ import com.nyxei.pollingus.service.WhatsappBusinessCloudApiService;
  */
 public class WhatsappBusinessCloudApi {
 
+    private final WhatsappBusinessCloudApiService whatsappBusinessCloudApiService;
+
     public WhatsappBusinessCloudApi(String token) {
-        createService(WhatsappBusinessCloudApiService.class, token);
+        this.whatsappBusinessCloudApiService = createService(WhatsappBusinessCloudApiService.class, token);
 
     }
 
@@ -31,7 +41,7 @@ public class WhatsappBusinessCloudApi {
      * @return {@link MessageResponse}
      * @see <a href="https://developers.facebook.com/docs/whatsapp/cloud-api/reference/messages">official documentation</a>
      */
-    public void sendMessage(String phoneNumberId, Message message) {
+    public MessageResponse sendMessage(String phoneNumberId, Message message) {
 
         return executeSync(whatsappBusinessCloudApiService.sendMessage(phoneNumberId, message));
     }
