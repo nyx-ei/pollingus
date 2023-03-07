@@ -5,16 +5,14 @@ import com.nyxei.pollingus.configuration.WhatsappApiConfig;
 //import com.nyxei.pollingus.exception.WhatsappApiException;
 import com.nyxei.pollingus.interceptor.AuthenticationInterceptor;
 import okhttp3.OkHttpClient;
-import okhttp3.ResponseBody;
-import retrofit2.Call;
+import java.io.IOException;
 import retrofit2.Converter;
 import retrofit2.Response;
+import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
-import java.io.IOException;
-import java.lang.annotation.Annotation;
-import java.util.Objects;
+
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -59,6 +57,22 @@ public class WhatsappApiServiceGenerator {
        var baseUrl = WhatsappApiConfig.BASE_DOMAIN;
         return createService(serviceClass, token, baseUrl);
 
+    }
+
+    public static <T> T executeSync(Call<T> call) {
+        try {
+            Response<T> response = call.execute();
+            if (response.isSuccessful()) {
+                return response.body();
+            
+        }
+        else{
+            return response.body();
+        }
+     } catch (IOException e) {
+        return null; 
+        }
+        
     }
 
     

@@ -3,7 +3,7 @@ package com.nyxei.pollingus;
 /*fill the variables with your data*/
 public class TestUtils {
 
-    public final static String TOKEN = "EAARHBP41pdoBANH7TfMxdN5R3ZCbqVX4RcyTHgpHNr0qqOKEH0TEo1omZCszkZBTk0VnLzeBsijNvfr7ZBgrlZApJcfQLD1yNVwy0FhcgKt8t1czDZAZAMo3bqfZBM4xZBQLl61wOOdPvlqg9XfZCAOMcN9si2KnuNBdJc92ZBKVkQuvpTQo4cIAZBoJFlR55KLV7I5hCxN5f4AdV6uvPKXcwMmz";
+    public final static String TOKEN = "EAARHBP41pdoBAIYky3SGwUJNwMt0D1UEUKIv7TFYmkEWQf9xMdMLuQnPsjQeoxqrevgYfYaQkLNxixIjxtOZBJlxOOCRXgti69kUS0WnVexd7EkA7k73ZB1ZBSRFPyz7Kp05pGf5HVhxYHeiHRvWEunsWFS4mqt3TKLhvsJacds3tyjrdu6rZBtBsOZBvebHATZBGBo4DflfhAWcZAsB2bj";
 
     public final static String WABA_ID = "111456911798137";
     public final static String PHONE_NUMBER_1 = "237697887157";
