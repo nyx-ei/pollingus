@@ -1,4 +1,4 @@
-﻿package com.nyxei.pollingus.model;
+package com.nyxei.pollingus.model;
 
 /*
  * dérive de la classe serializable
@@ -56,7 +56,7 @@ public String getIntitule(){
   }
 
  
-  static String intituleQuestion(){
+  public static String intituleQuestion(){
    String intitule="";
     ArrayList<String> tabString=fichierLecture();
     for(int i=0;i<tabString.size();i++){
@@ -113,23 +113,8 @@ public String getIntitule(){
         throw new Exception( "Not actually implemented" );
     }
 }
- /* 
- public static void main( String[] args ) throws Exception {
-    
-  String file = "testVS.json";
-  
-  try ( PrintWriter writer = new PrintWriter( file ) ) {
-      
-   String intitule= MultipleQuestion.intituleQuestion();
-   ArrayList<String> proposition= (ArrayList<String>) MultipleQuestion.propositionQuestion();
-   System.out.println(proposition.get(0));
-   writeObject( intitule, writer );
-   writeObject( proposition, writer );
-  }
-  
+ 
 
-}
- */ 
 
 
 
