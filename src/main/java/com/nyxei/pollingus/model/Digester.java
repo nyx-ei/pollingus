@@ -3,8 +3,7 @@ package com.nyxei.pollingus.model;
 import java.io.*;
 import java.util.*;
 
-import com.nyxei.pollingus.model.MultipleQuestion;
-import com.nyxei.pollingus.model.Survey;
+
 
 public class Digester {
 

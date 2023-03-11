@@ -9,8 +9,8 @@ package com.nyxei.pollingus.exception.utils;
 public class Formatter {
 
 
-    private final String STRIKETHROUGH = "~";
-    private final String CODE = "```";
+    //private final String STRIKETHROUGH = "~";
+   // private final String CODE = "```";
 
     /**
      * @param text String

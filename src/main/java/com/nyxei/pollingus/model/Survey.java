@@ -2,7 +2,7 @@ package com.nyxei.pollingus.model;
 
 import java.util.*;
 
-import com.nyxei.pollingus.model.MultipleQuestion;
+
 
 public class Survey {
 
@@ -10,14 +10,7 @@ public class Survey {
    private String titreSondage;
    private String idSondeur;
    private ArrayList<String> destinataireList=new ArrayList<String>();
-/* 
-    public Survey(OneChoiceQuestion qList,String titreS, String idSondeur,ArrayList<String> dList){
-        this.questionList=qList;
-        this.titreSondage=titreS;
-        this.idSondeur=idSondeur;
-        this.destinataireList=dList;
-    }
-    */
+
     public Survey(MultipleQuestion qList){
         this.questionList=qList;
         this.titreSondage="Pollingus";
