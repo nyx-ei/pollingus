@@ -5,7 +5,7 @@ package com.nyxei.pollingus.domain.messages;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.List;
+
 
 /**
  * To send a message, you must first assemble a message object with the content you want to send.

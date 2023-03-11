@@ -2,11 +2,11 @@ package com.nyxei.pollingus;
 
 import com.nyxei.pollingus.model.Digester;
 import com.nyxei.pollingus.model.MultipleQuestion;
-import com.nyxei.pollingus.model.Survey;
 import com.nyxei.pollingus.domain.messages.Message.MessageBuilder;
 import com.nyxei.pollingus.domain.messages.TextMessage;
 import com.nyxei.pollingus.exception.utils.Formatter;
 import com.nyxei.pollingus.impl.WhatsappBusinessCloudApi;
+
 
 
 import static com.nyxei.pollingus.TestUtils.PHONE_NUMBER_ID;
@@ -39,7 +39,7 @@ class PollingusApplicationTests {
 	catch(Exception e){
 		System.out.println(e);
 	}
-	Survey survey= new Survey(Digester.ObjectSurvey());
+	// Survey survey= new Survey(Digester.ObjectSurvey());
 
 	
 
