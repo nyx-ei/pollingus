@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="pollingus:war">
+    <output-path>$PROJECT_DIR$/app4java/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>pollingus</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="pollingus-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="pollingus:war exploded" />
+    </root>
+  </artifact>
+</component>
