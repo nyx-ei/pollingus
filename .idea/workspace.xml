@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d16acf58-bf6a-4ec6-939c-1effb5b39e28" name="Changes" comment="" />
+    <list default="true" id="d16acf58-bf6a-4ec6-939c-1effb5b39e28" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,6 +55,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
     "show.migrate.to.gradle.popup": "false",
     "spring.configuration.checksum": "e6aeb17f3f294411a692fefdff0eb6f5",
@@ -61,6 +66,8 @@
 }]]></component>
   <component name="RunManager">
     <configuration name="PollingusApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="jbr-17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <module name="pollingus" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.nyxei.pollingus.PollingusApplication" />
       <method v="2">
@@ -84,5 +91,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
