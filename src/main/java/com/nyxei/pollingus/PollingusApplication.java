@@ -1,21 +1,17 @@
 package com.nyxei.pollingus;
 
 import com.nyxei.pollingus.controllers.Digester;
-import org.commonmark.renderer.html.HtmlRenderer;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.io.*;
-import org.commonmark.node.*;
+import org.commonmark.node.Node;
 import org.commonmark.parser.Parser;
 import org.commonmark.renderer.html.HtmlRenderer;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import static com.nyxei.pollingus.controllers.WebhookController.envoitemplate;
+import java.io.IOException;
 
 @SpringBootApplication
 public class PollingusApplication {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 		//SpringApplication.run(PollingusApplication.class, args);
 		//f
 		Digester.lectureMd("markdown-syntax/yes-no-question.md");
