@@ -4,13 +4,16 @@ import org.commonmark.node.AbstractVisitor;
 import org.commonmark.node.Heading;
 import org.commonmark.node.Paragraph;
 
-import javax.swing.text.ParagraphView;
 import java.util.ArrayList;
 import java.util.List;
 
 public class QuestionExtractor {
     static class QuestionVisitor extends AbstractVisitor {
         private List<String> questions;
+
+        public QuestionVisitor(List<String> questions) {
+            this.questions = questions;
+        }
 
         public QuestionVisitor(){
             //initialser la liste
