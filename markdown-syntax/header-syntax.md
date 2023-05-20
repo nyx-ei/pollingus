@@ -1,2 +1,0 @@
-# poll name
-## poll description
