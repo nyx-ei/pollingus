@@ -15,7 +15,7 @@ import com.nyxei.pollingus.domain.templates.type.ComponentType;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = As.EXISTING_PROPERTY, property = "type")
 @JsonSubTypes({
-        @JsonSubTypes.Type(value = FooterComponent.class, name = "FOOTER"), //
+       
         @JsonSubTypes.Type(value = HeaderComponent.class, name = "HEADER"), //
         @JsonSubTypes.Type(value = BodyComponent.class, name = "BODY")})//
 public class Component<T extends Component<T>> {
@@ -24,8 +24,7 @@ public class Component<T extends Component<T>> {
     private ComponentType type;
     @JsonProperty("text")
     private String text;
-    @JsonProperty("example")
-    private Example example;
+   
 
     /**
      * Instantiates a new Component.
@@ -64,26 +63,9 @@ public class Component<T extends Component<T>> {
         return (T) this;
     }
 
-    /**
-     * Gets example.
-     *
-     * @return the example
-     */
-    public Example getExample() {
-        return example;
-    }
+    
 
-    /**
-     * Sets example.
-     *
-     * @param example the example
-     * @return the example
-     */
-    @SuppressWarnings("unchecked")
-    public T setExample(Example example) {
-        this.example = example;
-        return (T) this;
-    }
+    
 
     /**
      * Gets type.
