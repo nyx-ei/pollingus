@@ -2,7 +2,6 @@ package com.nyxei.pollingus.domain.templates;
 
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.nyxei.pollingus.domain.templates.type.Category;
 import com.nyxei.pollingus.domain.templates.type.LanguageType;
 
 import java.util.ArrayList;
@@ -25,10 +24,7 @@ public class MessageTemplate {
      * The language of the message template.
      */
     private LanguageType languageType;
-    /**
-     * The type of message template.
-     */
-    private Category category;
+    
     /**
      * The parts of the message template.
      */
@@ -103,25 +99,6 @@ public class MessageTemplate {
         return this;
     }
 
-    /**
-     * Gets category.
-     *
-     * @return the category
-     */
-    public Category getCategory() {
-        return category;
-    }
-
-    /**
-     * Sets category.
-     *
-     * @param category the category
-     * @return the category
-     */
-    public MessageTemplate setCategory(Category category) {
-        this.category = category;
-        return this;
-    }
 
     /**
      * Gets components.

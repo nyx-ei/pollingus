@@ -1,31 +1,33 @@
 package com.nyxei.pollingus.domain.messages;
 
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.nyxei.pollingus.domain.messages.type.MessageType;
 
 
 
 /**
  * To send a message, you must first assemble a message object with the content you want to send.
+ *
+ * @see <a href="https://developers.facebook.com/docs/whatsapp/cloud-api/reference/messages">API documentation - messages</a>
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Message {
     @JsonProperty("messaging_product")
     private final String messagingProduct = "whatsapp";
-   @JsonProperty("recipient_type")
+    @JsonProperty("recipient_type")
     private final String recipientType = "individual";
-   @JsonProperty("to")
-    private String to;
+    /**
+     * The Interactive message.
+     */
 
+    @JsonProperty("to")
+    private String to;
     @JsonProperty("type")
     private MessageType type;
-
-    @JsonProperty("text")
-    private TextMessage textMessage;
-
    
+    @JsonProperty("template")
+    private TemplateMessage templateMessage;
 
 
     private Message() {
@@ -36,60 +38,84 @@ public class Message {
         this.type = type;
     }
 
+    /**
+     * Gets messaging product.
+     *
+     * @return the messaging product
+     */
     public String getMessagingProduct() {
         return messagingProduct;
     }
 
+    /**
+     * Gets recipient type.
+     *
+     * @return the recipient type
+     */
     public String getRecipientType() {
         return recipientType;
     }
 
+	/**
+     * The type Message builder.
+     */
     public static class MessageBuilder {
+
+        private String to;
+
 
         private MessageBuilder() {
         }
 
-
-        private String to;
+        /**
+         * Builder message builder.
+         *
+         * @return the message builder
+         */
+        public static MessageBuilder builder() {
+            return new MessageBuilder();
+        }
 
         /**
-         * @param to Required.
-         *           <p>
-         *           WhatsApp ID or phone number for the person you want to send a message to.
+         *
+         *
+         * @param to Required.           <p>           WhatsApp ID or phone number for the person you want to send a message to.
+         * @return the to
          */
         public MessageBuilder setTo(String to) {
             this.to = to;
             return this;
         }
 
-
-        public static MessageBuilder builder() {
-            return new MessageBuilder();
-        }
+       
 
         /**
-         * Build a text objetc, with:
-         * <ul>
-         *     <li><b>body</b> required</li>
-         *     <li><b>preview_url</b> optional</li>
-         * </ul>
+         * Build template message
          *
-         * @param textMessage: {@link TextMessage} object.
+         * @param templateMessage the template message
+         * @return the message
+         * @see <a href="https://developers.facebook.com/docs/whatsapp/cloud-api/reference/messages#template-object">API documentation</a>
          */
-        public Message buildTextMessage(TextMessage textMessage) {
-            var message = new Message(to, MessageType.TEXT);
-            message.textMessage = textMessage;
+        public Message buildTemplateMessage(TemplateMessage templateMessage) {
+            var message = new Message(to, MessageType.TEMPLATE);
+            message.templateMessage = templateMessage;
             return message;
 
-
         }
 
-        /**
-         * <b>Requiered</b>.
-         * Build an objetc with {@link ContactsItem}
-         */
+    
         
 
+
+
+
+
+      
+
+
+
+      
+        
 
     }
 

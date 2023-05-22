@@ -1,11 +1,24 @@
 package com.nyxei.pollingus.configuration;
 
+/**
+ * The type Whatsapp api config.
+ */
 public class WhatsappApiConfig {
 
-    public static  String BASE_DOMAIN = "https://graph.facebook.com/";
+    /**
+     * The constant API_VERSION.
+     */
+    public final static String API_VERSION = "v16.0";
+    /**
+     * The constant BASE_DOMAIN.
+     */
+    public static String BASE_DOMAIN = "https://graph.facebook.com/";
 
-    public final static  String API_VERSION = "v16.0";
-
+    /**
+     * Sets base domain.
+     *
+     * @param baseDomain the base domain
+     */
     public static void setBaseDomain(String baseDomain) {
         BASE_DOMAIN = baseDomain;
     }
