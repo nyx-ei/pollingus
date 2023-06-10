@@ -15,17 +15,13 @@ import com.nyxei.pollingus.domain.templates.type.ComponentType;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = As.EXISTING_PROPERTY, property = "type")
 @JsonSubTypes({
-       
         @JsonSubTypes.Type(value = HeaderComponent.class, name = "HEADER"), //
         @JsonSubTypes.Type(value = BodyComponent.class, name = "BODY")})//
 public class Component<T extends Component<T>> {
-    
     @JsonProperty("type")
     private ComponentType type;
     @JsonProperty("text")
     private String text;
-   
-
     /**
      * Instantiates a new Component.
      */
@@ -62,11 +58,6 @@ public class Component<T extends Component<T>> {
         this.text = text;
         return (T) this;
     }
-
-    
-
-    
-
     /**
      * Gets type.
      *

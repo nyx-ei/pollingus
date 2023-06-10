@@ -1,8 +1,8 @@
 package com.nyxei.pollingus;
 
 
+import com.nyxei.pollingus.domain.Language;
 import com.nyxei.pollingus.domain.messages.BodyComponent;
-import com.nyxei.pollingus.domain.messages.Language;
 import com.nyxei.pollingus.domain.messages.Message.MessageBuilder;
 import com.nyxei.pollingus.domain.messages.TemplateMessage;
 import com.nyxei.pollingus.domain.messages.TextParameter;
@@ -14,11 +14,11 @@ import static com.nyxei.pollingus.TestUtils.PHONE_NUMBER_ID;
 
 public class SendTemplateButtonMessageExample {
     public static void main(String[] args) {
-        WhatsappApiFactory factory = WhatsappApiFactory.newInstance(TestUtils.TOKEN);
+        WhatsappApiFactory.token= TestUtils.TOKEN;
+        WhatsappApiFactory factory = WhatsappApiFactory.getInstance();
 
-        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi();
- 
-      var message = MessageBuilder.builder()//
+        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.getBusinessCloudApi();
+        var message = MessageBuilder.builder()//
                 .setTo(PHONE_NUMBER_1)//
                 .buildTemplateMessage( new TemplateMessage()
                         .setLanguage(new Language(LanguageType.EN_US)).setName("productsell")//

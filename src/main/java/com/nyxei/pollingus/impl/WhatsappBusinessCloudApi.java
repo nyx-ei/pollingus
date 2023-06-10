@@ -1,15 +1,9 @@
 package com.nyxei.pollingus.impl;
-
-
-
 import static com.nyxei.pollingus.WhatsappApiServiceGenerator.createService;
-
-
 
 import com.nyxei.pollingus.domain.messages.Message;
 import com.nyxei.pollingus.domain.messages.response.MessageResponse;
 import com.nyxei.pollingus.service.WhatsappBusinessCloudApiService;
-
 
 import static com.nyxei.pollingus.WhatsappApiServiceGenerator.executeSync;
 
@@ -21,7 +15,7 @@ import static com.nyxei.pollingus.WhatsappApiServiceGenerator.executeSync;
  */
 public class WhatsappBusinessCloudApi {
 
-    private final WhatsappBusinessCloudApiService whatsappBusinessCloudApiService;
+    private WhatsappBusinessCloudApiService whatsappBusinessCloudApiService;
 
     public WhatsappBusinessCloudApi(String token) {
         this.whatsappBusinessCloudApiService = createService(WhatsappBusinessCloudApiService.class, token);

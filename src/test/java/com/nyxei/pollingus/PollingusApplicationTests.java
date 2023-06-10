@@ -9,6 +9,5 @@ class PollingusApplicationTests {
 
 	@Test
 	void contextLoads() {
-	
 }
 }

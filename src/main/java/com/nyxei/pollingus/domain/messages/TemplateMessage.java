@@ -2,6 +2,8 @@ package com.nyxei.pollingus.domain.messages;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.nyxei.pollingus.domain.Component;
+import com.nyxei.pollingus.domain.Language;
 
 import java.util.ArrayList;
 import java.util.List;

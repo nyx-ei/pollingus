@@ -24,13 +24,10 @@ public class MessageTemplate {
      * The language of the message template.
      */
     private LanguageType languageType;
-    
     /**
      * The parts of the message template.
      */
     private List<Component<?>> components;
-
-
     /**
      * Add component message template.
      *
@@ -57,8 +54,6 @@ public class MessageTemplate {
         return this;
 
     }
-
-
     /**
      * Gets name.
      *
@@ -67,7 +62,6 @@ public class MessageTemplate {
     public String getName() {
         return name;
     }
-
     /**
      * Sets name.
      *
@@ -78,7 +72,6 @@ public class MessageTemplate {
         this.name = name;
         return this;
     }
-
     /**
      * Gets language.
      *

@@ -16,6 +16,4 @@ public class BodyComponent extends Component<BodyComponent> {
     public BodyComponent() {
         super(ComponentType.BODY);
     }
-
-
 }

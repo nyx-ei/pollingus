@@ -20,12 +20,10 @@ public class Message {
     /**
      * The Interactive message.
      */
-
     @JsonProperty("to")
     private String to;
     @JsonProperty("type")
     private MessageType type;
-   
     @JsonProperty("template")
     private TemplateMessage templateMessage;
 
@@ -87,8 +85,6 @@ public class Message {
             return this;
         }
 
-       
-
         /**
          * Build template message
          *
@@ -102,20 +98,6 @@ public class Message {
             return message;
 
         }
-
-    
-        
-
-
-
-
-
-      
-
-
-
-      
-        
 
     }
 

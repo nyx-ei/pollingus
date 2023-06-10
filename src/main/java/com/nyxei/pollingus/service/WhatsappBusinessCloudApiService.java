@@ -15,7 +15,6 @@ import static com.nyxei.pollingus.configuration.WhatsappApiConfig.API_VERSION;
 
 public interface WhatsappBusinessCloudApiService {
 
-
     @POST("/" + API_VERSION + "/{Phone-Number-ID}/messages")
     Call<MessageResponse> sendMessage(@Path("Phone-Number-ID") String phoneNumberId, @Body Message message);
 

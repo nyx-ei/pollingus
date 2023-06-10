@@ -13,8 +13,6 @@ public class AuthenticationInterceptor implements Interceptor {
     public AuthenticationInterceptor(String token) {
         this.token=token ;
     }
-
-
     @Override
     public Response intercept(Chain chain) throws IOException {
         Request newRequest = chain.request() //

@@ -23,5 +23,4 @@ public class WhatsappApiConfig {
         BASE_DOMAIN = baseDomain;
     }
 
-
 }

@@ -1,6 +1,7 @@
 package com.nyxei.pollingus.domain.messages;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.nyxei.pollingus.domain.Component;
 import com.nyxei.pollingus.domain.messages.type.ComponentType;
 
 

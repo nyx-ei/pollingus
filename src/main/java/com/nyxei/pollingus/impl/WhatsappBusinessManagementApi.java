@@ -7,15 +7,11 @@ package com.nyxei.pollingus.impl;
  */
 public class WhatsappBusinessManagementApi {
 
-
     /**
      * Instantiates a new Whatsapp business management api.
      *
      * @param token the token
      */
-    public WhatsappBusinessManagementApi(String token) {
-       
+    public WhatsappBusinessManagementApi(String token) {    
     }
-
-
 }

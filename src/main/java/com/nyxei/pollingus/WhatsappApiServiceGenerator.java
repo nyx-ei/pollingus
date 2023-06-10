@@ -2,7 +2,6 @@ package com.nyxei.pollingus;
 
 import com.nyxei.pollingus.configuration.WhatsappApiConfig;
 
-//import com.nyxei.pollingus.exception.WhatsappApiException;
 import com.nyxei.pollingus.interceptor.AuthenticationInterceptor;
 import okhttp3.OkHttpClient;
 import java.io.IOException;
@@ -26,16 +25,11 @@ public class WhatsappApiServiceGenerator {
     static {
 
         sharedClient = new OkHttpClient.Builder()//
-                .callTimeout(20, TimeUnit.SECONDS)//
-                .pingInterval(20, TimeUnit.SECONDS)//
+                .callTimeout(10, TimeUnit.SECONDS)//
+                .pingInterval(10, TimeUnit.SECONDS)//
                 .build();
     }
-
-   
-
-
-
-    public static <S> S createService(Class<S> serviceClass, String token, String baseUrl) {
+    public static <S> S setClient_createService(Class<S> serviceClass, String token, String baseUrl) {
         Retrofit.Builder retrofitBuilder = new Retrofit.Builder().baseUrl(baseUrl).addConverterFactory(converterFactory);
 
         if (token == null) {
@@ -53,9 +47,8 @@ public class WhatsappApiServiceGenerator {
 
     public static <S> S createService(Class<S> serviceClass, String token) {
 
-       // var baseUrl = WhatsappApiConfig.BASE_DOMAIN;
-       var baseUrl = WhatsappApiConfig.BASE_DOMAIN;
-        return createService(serviceClass, token, baseUrl);
+        var baseUrl = WhatsappApiConfig.BASE_DOMAIN;
+        return setClient_createService(serviceClass, token, baseUrl);
 
     }
 
@@ -64,20 +57,15 @@ public class WhatsappApiServiceGenerator {
             Response<T> response = call.execute();
             if (response.isSuccessful()) {
                 return response.body();
-            
         }
         else{
             return response.body();
         }
-     } catch (IOException e) {
+        }
+        catch (IOException e) {
         return null; 
         }
-        
     }
-
-    
-
-    
 
     public static OkHttpClient getSharedClient() {
         return sharedClient;

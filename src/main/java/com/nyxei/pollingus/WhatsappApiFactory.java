@@ -4,35 +4,42 @@ package com.nyxei.pollingus;
 import com.nyxei.pollingus.impl.WhatsappBusinessCloudApi;
 import com.nyxei.pollingus.impl.WhatsappBusinessManagementApi;
 
-
 /**
  * A factory for creating Whatsapp api client objects.
  */
 public class WhatsappApiFactory {
-
    /**
      * Whatsapp token
      */
-    final String token;
+    public static String token;
+    /**
+     * new instance of WhatsappApiFactory,WhatsappBusinessCloudApi,WhatsappBusinessManagementApi according to the singleton pattern
+     */
+    private static WhatsappApiFactory instanceWFactory = new WhatsappApiFactory();
+    private static WhatsappBusinessCloudApi instanceWCloud = new WhatsappBusinessCloudApi(token);
+    private static WhatsappBusinessManagementApi instanceWManagement = new WhatsappBusinessManagementApi(token);
+
+    /**
+      * set apiKey with the token
+      */
+    private String apiKey;
 
     /**
      * Create a new whatsapp api factory
      *
      * @param token the whatsapp token
      */
-    private WhatsappApiFactory(String token) {
-        this.token = token;
+    private WhatsappApiFactory() {
+        this.apiKey = token;
     }
-
 
     /**
      * New instance whatsapp api factory.
      *
-     * @param apiKey the api key
      * @return the whatsapp api factory
      */
-    public static WhatsappApiFactory newInstance(String apiKey) {
-        return new WhatsappApiFactory(apiKey);
+    public static WhatsappApiFactory getInstance() {
+       return instanceWFactory;
     }
 
     /**
@@ -40,9 +47,8 @@ public class WhatsappApiFactory {
      *
      * @return the whatsapp business cloud api
      */
-    public WhatsappBusinessCloudApi newBusinessCloudApi() {
-
-        return new WhatsappBusinessCloudApi(token);
+    public WhatsappBusinessCloudApi getBusinessCloudApi() {
+        return instanceWCloud;
     }
 
     /**
@@ -50,10 +56,7 @@ public class WhatsappApiFactory {
      *
      * @return the whatsapp business management api
      */
-    public WhatsappBusinessManagementApi newBusinessManagementApi() {
-        return new WhatsappBusinessManagementApi(token);
+    public WhatsappBusinessManagementApi getBusinessManagementApi() {
+        return instanceWManagement;
     }
-
-   
-
 }

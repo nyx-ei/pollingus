@@ -1,4 +1,4 @@
-package com.nyxei.pollingus.domain.messages;
+package com.nyxei.pollingus.domain;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
