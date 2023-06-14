@@ -14,16 +14,17 @@ import static com.nyxei.pollingus.TestUtils.PHONE_NUMBER_ID;
 
 public class SendTemplateButtonMessageExample {
     public static void main(String[] args) {
-        WhatsappApiFactory.token= TestUtils.TOKEN;
-        WhatsappApiFactory factory = WhatsappApiFactory.getInstance();
 
-        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.getBusinessCloudApi();
+        WhatsappApiFactory factory = WhatsappApiFactory.getInstanceApiFactory(TestUtils.TOKEN);
+
+        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.getInstanceBusinessCloudApi();
+
         var message = MessageBuilder.builder()//
                 .setTo(PHONE_NUMBER_1)//
                 .buildTemplateMessage( new TemplateMessage()
                         .setLanguage(new Language(LanguageType.EN_US)).setName("productsell")//
-                                .addComponent(new BodyComponent()//
-                                        .addParameter(new TextParameter("What type of management do you agree with?")//
+                               .addComponent(new BodyComponent()//
+                                       .addParameter(new TextParameter("What type of management do you agree with?")//
                                         )
                                         .addParameter(new TextParameter("1-Directive management  2-Persuasive management")//
                                         ))

@@ -14,9 +14,6 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
 
 import java.util.concurrent.TimeUnit;
 
-/**
- *
- */
 public class WhatsappApiServiceGenerator {
 
     private static final OkHttpClient sharedClient;
@@ -29,7 +26,7 @@ public class WhatsappApiServiceGenerator {
                 .pingInterval(10, TimeUnit.SECONDS)//
                 .build();
     }
-    public static <S> S setClient_createService(Class<S> serviceClass, String token, String baseUrl) {
+    public static <S> S setClient(Class<S> serviceClass, String token, String baseUrl) {
         Retrofit.Builder retrofitBuilder = new Retrofit.Builder().baseUrl(baseUrl).addConverterFactory(converterFactory);
 
         if (token == null) {
@@ -48,7 +45,7 @@ public class WhatsappApiServiceGenerator {
     public static <S> S createService(Class<S> serviceClass, String token) {
 
         var baseUrl = WhatsappApiConfig.BASE_DOMAIN;
-        return setClient_createService(serviceClass, token, baseUrl);
+        return setClient(serviceClass, token, baseUrl);
 
     }
 
