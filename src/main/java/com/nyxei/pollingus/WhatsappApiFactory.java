@@ -3,9 +3,6 @@ package com.nyxei.pollingus;
 
 import com.nyxei.pollingus.impl.WhatsappBusinessCloudApi;
 
-//import kotlin.jvm.Synchronized;
-
-
 public class WhatsappApiFactory {
 
     /**
@@ -14,7 +11,7 @@ public class WhatsappApiFactory {
     String token;
 
     /**
-     *  initialization of WhatsappApiFactory, WhatsappBusinessCloudApi and WhatsappBusinessManagementApi instance
+     *  initialization of WhatsappApiFactory, WhatsappBusinessCloudApi instance
      */
     private static WhatsappApiFactory instanceWFactory = null;
     private static WhatsappBusinessCloudApi instanceWCloud = null;
