@@ -20,16 +20,14 @@ public class SendTemplateButtonMessageExample {
         WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.getInstanceBusinessCloudApi();
 
         var message = MessageBuilder.builder()//
-                .setTo(PHONE_NUMBER_1)//
-                .buildTemplateMessage( new TemplateMessage()
-                        .setLanguage(new Language(LanguageType.EN_US)).setName("productsell")//
-                               .addComponent(new BodyComponent()//
-                                       .addParameter(new TextParameter("What type of management do you agree with?")//
-                                        )
-                                        .addParameter(new TextParameter("1-Directive management  2-Persuasive management")//
-                                        ))
-                );
-
+            .setTo(PHONE_NUMBER_1)//
+            .buildTemplateMessage( new TemplateMessage()
+                .setLanguage(new Language(LanguageType.EN_US)).setName("productsell")//
+                .addComponent(new BodyComponent()//
+                    .addParameter(new TextParameter("What type of management do you agree with?"))
+                    .addParameter(new TextParameter("1-Directive management  2-Persuasive management"))
+                )
+            );
 
         whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
     }

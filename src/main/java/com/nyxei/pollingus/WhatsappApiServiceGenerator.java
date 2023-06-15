@@ -18,20 +18,20 @@ public class WhatsappApiServiceGenerator {
 
     private static final OkHttpClient sharedClient;
     private static final Converter.Factory converterFactory = JacksonConverterFactory.create();
+    final static int CALL_TIME_OUT_DURATION = 10;
+    final static int PING_INTERVAL_DURATION = 10;
 
     static {
 
         sharedClient = new OkHttpClient.Builder()//
-                .callTimeout(10, TimeUnit.SECONDS)//
-                .pingInterval(10, TimeUnit.SECONDS)//
+                .callTimeout(CALL_TIME_OUT_DURATION, TimeUnit.SECONDS)//
+                .pingInterval(PING_INTERVAL_DURATION, TimeUnit.SECONDS)//
                 .build();
     }
     public static <S> S setClient(Class<S> serviceClass, String token, String baseUrl) {
         Retrofit.Builder retrofitBuilder = new Retrofit.Builder().baseUrl(baseUrl).addConverterFactory(converterFactory);
 
-        if (token == null) {
-            retrofitBuilder.client(sharedClient);
-        } else {
+        if (token != null) {
 
             AuthenticationInterceptor interceptor = new AuthenticationInterceptor(token);
             OkHttpClient adaptedClient = sharedClient.newBuilder().addInterceptor(interceptor).build();
@@ -60,7 +60,7 @@ public class WhatsappApiServiceGenerator {
         }
         }
         catch (IOException e) {
-        return null; 
+            return null; 
         }
     }
 

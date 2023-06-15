@@ -15,7 +15,7 @@ public class WhatsappApiFactory {
      */
     private static WhatsappApiFactory instanceWFactory = null;
     private static WhatsappBusinessCloudApi instanceWCloud = null;
-   
+
     /**
      * Create a new whatsapp api factory
      *
@@ -31,7 +31,7 @@ public class WhatsappApiFactory {
                 if(instanceWFactory == null){
                     instanceWFactory = new WhatsappApiFactory(apiKey);
                 }
-            }   
+            }
         }
         return instanceWFactory;
     }
