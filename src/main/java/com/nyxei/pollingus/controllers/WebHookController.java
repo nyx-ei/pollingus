@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
-
 @RestController
 @RequestMapping("/webhook")
 public class WebHookController {
@@ -26,7 +24,7 @@ public class WebHookController {
     }
 
     @PostMapping
-    private ResponseEntity<?> listingNotifications(@RequestBody Map<String, JSONObject> payload){
+    private ResponseEntity<?> listingNotifications(@RequestBody JSONObject payload){
         Notification notification = new Notification();
         notification.setContent(payload.toString());
         notificationRepository.save(notification);
