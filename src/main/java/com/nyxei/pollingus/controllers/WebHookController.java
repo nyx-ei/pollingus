@@ -30,7 +30,7 @@ public class WebHookController {
     @PostMapping
     private ResponseEntity<?> listingNotifications(@RequestBody Payload payload){
         Notification notification = new Notification();
-        notification.setContent(payload.getEntry().get(0).toString());
+        notification.setContent(payload.toString());
         notificationRepository.save(notification);
         return ResponseEntity.ok().build();
     }
