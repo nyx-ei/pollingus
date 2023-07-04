@@ -11,7 +11,6 @@
 	<groupId>com.nyxei</groupId>
 	<artifactId>pollingus</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
 	<name>pollingus</name>
 	<description>Project Pollingus &lt;https://github.com/nyx-ei/pollingus&gt;</description>
 	<properties>
