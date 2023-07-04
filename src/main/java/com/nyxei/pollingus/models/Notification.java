@@ -1,15 +1,13 @@
 package com.nyxei.pollingus.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Notification {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(columnDefinition = "LONGTEXT")
     private String content;
 
     public Long getId() {
