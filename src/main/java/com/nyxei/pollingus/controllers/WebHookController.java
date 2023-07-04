@@ -2,12 +2,12 @@ package com.nyxei.pollingus.controllers;
 
 import com.nyxei.pollingus.models.Notification;
 import com.nyxei.pollingus.repositories.NotificationRepository;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/webhook")
@@ -26,9 +26,9 @@ public class WebHookController {
     }
 
     @PostMapping
-    private ResponseEntity<?> listingNotifications(){
+    private ResponseEntity<?> listingNotifications(@RequestBody Map<String, JSONObject> payload){
         Notification notification = new Notification();
-        notification.setContent("this is a test");
+        notification.setContent(payload.toString());
         notificationRepository.save(notification);
         return ResponseEntity.ok().build();
     }
