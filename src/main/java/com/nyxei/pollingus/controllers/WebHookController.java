@@ -26,9 +26,9 @@ public class WebHookController {
     }
 
     @PostMapping
-    private ResponseEntity<?> listingNotifications(@RequestBody HashMap<String, Object> body){
+    private ResponseEntity<?> listingNotifications(){
         Notification notification = new Notification();
-        notification.setContent(body.toString());
+        notification.setContent("this is a test");
         notificationRepository.save(notification);
         return ResponseEntity.ok().build();
     }
