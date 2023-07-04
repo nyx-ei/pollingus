@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 
 @RestController
 @RequestMapping("/webhook")
@@ -20,15 +21,15 @@ public class WebHookController {
 
     @GetMapping
     private ResponseEntity<?> listenIncomingMessages(@RequestParam(name = "hub.challenge") Integer challenge, @RequestParam(name = "hub.mode") String mode, @RequestParam(name = "hub.verify_token") String verify){
-        Notification notification = new Notification();
-        notification.setContent(verify);
-        notificationRepository.save(notification);
         if("subscribe".equals(mode) && token.equals(verify)) return ResponseEntity.ok(challenge);
         return ResponseEntity.badRequest().build();
     }
 
     @PostMapping
-    private ResponseEntity<?> listingNotifications(HttpServletRequest request){
-        return ResponseEntity.ok(request.getParameterMap());
+    private ResponseEntity<?> listingNotifications(@RequestBody HashMap<String, Object> body){
+        Notification notification = new Notification();
+        notification.setContent(body.toString());
+        notificationRepository.save(notification);
+        return ResponseEntity.ok().build();
     }
 }
