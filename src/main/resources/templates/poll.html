@@ -5,10 +5,15 @@
     <title>Poll</title>
 </head>
 <body>
-    <form action="">
-        <!--/*@thymesVar id="poll" type="com.nyxei.pollingus.models.Poll"*/-->
-        <div th:utext="${poll?.toHtml()}"></div>
-        <button type="submit">Soumettre</button>
-    </form>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Content</th>
+        </tr>
+        <tr th:each="notification,iter: ${notifications}">
+            <td th:text="${notification.id}"></td>
+            <td th:text="${notification.content}"></td>
+        </tr>
+    </table>
 </body>
 </html>

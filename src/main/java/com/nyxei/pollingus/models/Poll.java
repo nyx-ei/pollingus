@@ -9,13 +9,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "polls")
 public class Poll implements Displayable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String topic;
+    @Column(name = "starting")
     private LocalDateTime start;
+    @Column(name = "ending")
     private LocalDateTime end;
     private String language;
     @OneToMany

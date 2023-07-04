@@ -1,24 +1,24 @@
 package com.nyxei.pollingus.controllers;
 
-import com.nyxei.pollingus.models.Poll;
-import com.nyxei.pollingus.models.enums.AnswerType;
-import com.nyxei.pollingus.models.question.Proposition;
-import com.nyxei.pollingus.models.question.Question;
+import com.nyxei.pollingus.repositories.NotificationRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.Arrays;
-
 @Controller
-@RequestMapping("/polls")
+@RequestMapping("/notifications")
 public class PollController {
+    private final NotificationRepository notificationRepository;
+
+    public PollController(NotificationRepository notificationRepository) {
+        this.notificationRepository = notificationRepository;
+    }
+
     //private final Po
-    @GetMapping("{id}")
-    public String display(@PathVariable long id, Model model){
-        Poll poll = new Poll();
+    @GetMapping
+    public String display(Model model){
+        /*Poll poll = new Poll();
         poll.setName("Poll name");
         poll.setTopic("Poll topic");
         Question question1 = new Question();
@@ -58,7 +58,8 @@ public class PollController {
         p4.setQuestion(question4);
         question4.setPropositions(Arrays.asList(p1, p2, p3, p4));
         poll.getQuestions().add(question4);
-        model.addAttribute("poll", poll);
+        model.addAttribute("poll", poll);*/
+        model.addAttribute("notifications", notificationRepository.findAll());
         return "poll";
     }
 }
