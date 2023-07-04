@@ -3,10 +3,7 @@ package com.nyxei.pollingus.controllers;
 import com.nyxei.pollingus.models.Notification;
 import com.nyxei.pollingus.repositories.NotificationRepository;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -25,5 +22,10 @@ public class WebHookController {
         notification.setContent(request.getParameter("hub.verify_token"));
         notificationRepository.save(notification);
         return ResponseEntity.ok(1158201444);
+    }
+
+    @PostMapping
+    private ResponseEntity<?> listingNotifications(HttpServletRequest request){
+        return ResponseEntity.ok(request.getParameterMap());
     }
 }
