@@ -1,12 +1,17 @@
 package com.nyxei.pollingus.models;
 
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Payload {
     private String object;
     private String id;
     private Integer time;
-    private Object[] entry = {};
-    private Object[] changed_fields = {};
-    private Object[] changes = {};
+    private List<JSONObject> entry = new ArrayList<>();
+    private List<JSONObject> changed_fields = new ArrayList<>();
+    private List<JSONObject> changes = new ArrayList<>();
 
     public String getObject() {
         return object;
@@ -32,27 +37,27 @@ public class Payload {
         this.time = time;
     }
 
-    public Object[] getEntry() {
+    public List<JSONObject> getEntry() {
         return entry;
     }
 
-    public void setEntry(Object[] entry) {
+    public void setEntry(List<JSONObject> entry) {
         this.entry = entry;
     }
 
-    public Object[] getChanged_fields() {
+    public List<JSONObject> getChanged_fields() {
         return changed_fields;
     }
 
-    public void setChanged_fields(Object[] changed_fields) {
+    public void setChanged_fields(List<JSONObject> changed_fields) {
         this.changed_fields = changed_fields;
     }
 
-    public Object[] getChanges() {
+    public List<JSONObject> getChanges() {
         return changes;
     }
 
-    public void setChanges(Object[] changes) {
+    public void setChanges(List<JSONObject> changes) {
         this.changes = changes;
     }
 
