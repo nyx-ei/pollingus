@@ -9,7 +9,7 @@ public class Payload {
     private String object;
     private String id;
     private Integer time;
-    private List<JSONObject> messages = new ArrayList<>();
+    private List<JSONObject> entry = new ArrayList<>();
     private List<JSONObject> changed_fields = new ArrayList<>();
     private List<JSONObject> changes = new ArrayList<>();
 
@@ -37,12 +37,12 @@ public class Payload {
         this.time = time;
     }
 
-    public List<JSONObject> getMessages() {
-        return messages;
+    public List<JSONObject> getEntry() {
+        return entry;
     }
 
-    public void setMessages(List<JSONObject> messages) {
-        this.messages = messages;
+    public void setEntry(List<JSONObject> entry) {
+        this.entry = entry;
     }
 
     public List<JSONObject> getChanged_fields() {
