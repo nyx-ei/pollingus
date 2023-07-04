@@ -1,6 +1,7 @@
 package com.nyxei.pollingus.controllers;
 
 import com.nyxei.pollingus.models.Notification;
+import com.nyxei.pollingus.models.Payload;
 import com.nyxei.pollingus.repositories.NotificationRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
@@ -27,9 +28,9 @@ public class WebHookController {
     }
 
     @PostMapping
-    private ResponseEntity<?> listingNotifications(HttpServletRequest request) throws IOException {
+    private ResponseEntity<?> listingNotifications(@RequestBody Payload payload){
         Notification notification = new Notification();
-        notification.setContent(request.getReader().lines().collect(Collectors.joining(" ")));
+        notification.setContent(payload.getEntry().get(0).toString());
         notificationRepository.save(notification);
         return ResponseEntity.ok().build();
     }
