@@ -27,6 +27,9 @@ public class Message {
     @JsonProperty("template")
     private TemplateMessage templateMessage;
 
+    @JsonProperty("text")
+    private TextMessage textMessage;
+
 
     private Message() {
     }
@@ -98,6 +101,15 @@ public class Message {
             return message;
 
         }
+
+        public Message buildTextMessage(TextMessage textMessage) {
+            var message = new Message(to, MessageType.TEXT);
+            message.textMessage = textMessage;
+            return message;
+
+
+        }
+
 
     }
 

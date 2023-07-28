@@ -12,6 +12,8 @@ import com.nyxei.pollingus.impl.WhatsappBusinessCloudApi;
 import static com.nyxei.pollingus.TestUtils.PHONE_NUMBER_1;
 import static com.nyxei.pollingus.TestUtils.PHONE_NUMBER_ID;
 
+import com.nyxei.pollingus.controller.WebhookController;
+
 public class SendTemplateButtonMessageExample {
     public static void main(String[] args) {
 
@@ -22,13 +24,13 @@ public class SendTemplateButtonMessageExample {
         var message = MessageBuilder.builder()//
             .setTo(PHONE_NUMBER_1)//
             .buildTemplateMessage( new TemplateMessage()
-                .setLanguage(new Language(LanguageType.EN_US)).setName("productsell")//
-                .addComponent(new BodyComponent()//
-                    .addParameter(new TextParameter("What type of management do you agree with?"))
-                    .addParameter(new TextParameter("1-Directive management  2-Persuasive management"))
-                )
+                .setLanguage(new Language(LanguageType.EN_US)).setName("hello_world")//
+                
             );
+            //if( WebhookController.messageType != "image"){
+                 whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+           // }
 
-        whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+       
     }
 }
