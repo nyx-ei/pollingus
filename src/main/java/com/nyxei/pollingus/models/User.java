@@ -1,7 +1,12 @@
 package com.nyxei.pollingus.models;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "users")
 public class User {
@@ -10,4 +15,6 @@ public class User {
     private Long id;
     private String email;
     private String password;
+    private String username;
+    private String enabled;
 }
