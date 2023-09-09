@@ -7,9 +7,12 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeInfo.As;
 import com.nyxei.pollingus.domain.messages.BodyComponent;
+import com.nyxei.pollingus.domain.messages.Button;
 import com.nyxei.pollingus.domain.messages.Parameter;
+import com.nyxei.pollingus.domain.messages.WindowMessage;
 import com.nyxei.pollingus.domain.messages.type.ComponentType;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +30,7 @@ public abstract class Component<T extends Component<T>> {
     private final ComponentType type;
     @JsonProperty("parameters")
     private List<Parameter> parameters;
-
+    private Button button;
 
     /**
      * Instantiates a new Component.
@@ -81,5 +84,10 @@ public abstract class Component<T extends Component<T>> {
         this.parameters.add(parameter);
 
         return this;
+    }
+
+    public Button addButton(Button button) {
+        this.button = button;
+        return this.button;
     }
 }

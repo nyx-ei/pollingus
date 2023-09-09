@@ -1,9 +1,13 @@
 package com.nyxei.pollingus.domain.messages;
 
+import ch.qos.logback.classic.spi.LoggingEventVO;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.nyxei.pollingus.domain.messages.type.MessageType;
 
+import java.util.Collections;
+
+import static java.awt.SystemColor.text;
 
 
 /**
@@ -98,7 +102,20 @@ public class Message {
             return message;
 
         }
+        public static Message buildTextMessage(String to) {
+            Message message = new Message(to, MessageType.TEXT);
+            message.templateMessage = new TemplateMessage();
+            message.templateMessage.setComponents(Collections.singletonList(new BodyComponent(text)));
+            return message;
+        }
 
+        public WindowMessage setWindowMessage(WindowMessage windowMessage) {
+            return windowMessage;
+        };
+
+    }
+
+    private void setTemplateMessage(TemplateMessage templateMessage) {
     }
 
 }
