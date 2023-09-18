@@ -25,12 +25,7 @@ public class SendTemplateButtonMessageExample {
             .setTo(PHONE_NUMBER_1)//
             .buildTemplateMessage( new TemplateMessage()
                 .setLanguage(new Language(LanguageType.EN_US)).setName("hello_world")//
-                
             );
-            //if( WebhookController.messageType != "image"){
-                 whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
-           // }
-
-       
+        whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
     }
 }

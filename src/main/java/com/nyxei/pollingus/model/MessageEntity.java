@@ -1,18 +1,12 @@
 package com.nyxei.pollingus.model;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import org.springframework.data.jpa.domain.AbstractPersistable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
 import javax.persistence.Column;
 import javax.persistence.Id;
-
-
 
 @Entity
 @Table(name="media")
@@ -40,28 +34,5 @@ public class MessageEntity  {
 
     @Column(name = "sha_256")
     private String sha256;
-
-    public  void setUserName(String userName){
-        this.userName = userName;
-    }
-    public void  setSenderNumber(String senderNumber){
-            this.senderNumber = senderNumber;
-    }
-
-    public void setMessageType(String messageType){
-        this.messageType = messageType;
-    }
-
-    public void setImageCaption(String imageCaption){
-        this.imageCaption = imageCaption;
-    }
-
-    public void setMimeType(String mimeType){
-        this.mimeType = mimeType;
-    }
-
-    public void setSha256(String sha256){
-        this.sha256 = sha256;
-    }
 
 }

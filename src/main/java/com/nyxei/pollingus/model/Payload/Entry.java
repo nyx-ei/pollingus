@@ -1,7 +1,6 @@
-package com.nyxei.pollingus.controller.Payload;
+package com.nyxei.pollingus.model.Payload;
 
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
 public class Entry {
